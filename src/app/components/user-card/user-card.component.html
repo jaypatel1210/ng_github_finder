@@ -1,0 +1,25 @@
+<div class="card user-card">
+    <div class="background">
+        <img 
+        class="img-fluid rounded-circle profile-pic border-2 border-dark"
+        [src]="user.avatar_url" 
+        alt="user profile img"
+        >
+    </div>
+
+    <div class="card-body">
+        <h5 class="card-title">
+            {{ user.name }}
+        </h5>
+        <p class="card-text" *ngIf="user.bio">BIO:- {{ user.bio }}</p>
+        <p class="card-text" *ngIf="user.company">Company:- {{ user.company }}</p>
+        <p class="card-text" *ngIf="user.blog">
+            Website:- 
+            <a [href]="user.blog" target="_blank" rel="noopener noreferrer">
+                {{ user.blog }}
+            </a>
+        </p>
+        <p class="card-text" *ngIf="user.updated_at">Updated at:- {{ user.updated_at | date: 'short' }}</p>
+    </div>
+
+</div>

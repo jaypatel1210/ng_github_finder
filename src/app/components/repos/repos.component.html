@@ -1,0 +1,16 @@
+<h5>All Repositories</h5>
+<div *ngIf="repos.length >= 1; else notFound">
+    <div *ngFor="let repo of repos" class="list-group mb-2">
+        <a 
+            [href]="repo.html_url"
+            target="_blank"
+            class="list-group-item list-group-item-action">
+            {{ repo.name }}
+        </a>
+    </div>
+</div>
+<ng-template #notFound>
+    <div class="alert alert-warning" role="alert">
+        No repositories Found
+    </div>
+</ng-template>
