@@ -1,4 +1,9 @@
-<h5>All Repositories</h5>
+<h5 class="float-left">All Repositories</h5>
+<div class="float-right" *ngIf="repos">
+    Total Repositories - {{ repos.length }}
+</div>
+<br>
+<br>
 <div *ngIf="repos.length >= 1; else notFound">
     <div *ngFor="let repo of repos" class="list-group mb-2">
         <a 
